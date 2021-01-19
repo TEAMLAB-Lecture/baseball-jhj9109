@@ -204,6 +204,12 @@ def get_strikes_or_ball(user_input_number, random_number):
                 result[1] += 1
     # ==================================
     return result
+# print("테스트")
+# print(get_strikes_or_ball("123", "123")) #3,0
+# print(get_strikes_or_ball("456", "123")) #0,0
+# print(get_strikes_or_ball("312", "123")) #0,3
+# print(get_strikes_or_ball("472", "764")) #0,2
+# print(get_strikes_or_ball("174", "175")) #2,0
 
 def is_yes(one_more_input):
     # '''
