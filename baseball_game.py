@@ -306,7 +306,7 @@ def main():
                 if while_roop == 10:
                     print("무한루프")
                     break
-            # 0입력하여 종료하는 경우
+            # 0 입력하여 종료하는 경우
             if user_input == "0":
                 break
 
