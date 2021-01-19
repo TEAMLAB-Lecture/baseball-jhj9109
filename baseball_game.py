@@ -297,12 +297,19 @@ def main():
             # 잘못된 입력
             while_roop = 0
             while not is_digit(user_input) or not is_between_100_and_999(user_input) or not is_validated_number(user_input):
+                # 0입력하여 종료하는 경우
+                if user_input == "0":
+                    break
                 print("Wrong Input, Input again")
                 user_input = input('Input guess number : ')
                 while_roop += 1
                 if while_roop == 10:
                     print("무한루프")
                     break
+            # 0입력하여 종료하는 경우
+            if user_input == "0":
+                break
+
             # 올바른 입력 => 스트라이크, 볼 판정
             strike, ball = get_strikes_or_ball(user_input, random_number)
             print(f'Strikes : {strike} , Balls : {ball}')
@@ -310,6 +317,9 @@ def main():
             # 정답 => 게임 종료
             if strike == 3:
                 break
+        # 0입력하여 종료하는 경우
+        if user_input == "0":
+            break
         # 게임 종료 후 => 다음 게임 여쭤보는 단계
         user_input = input('You win, one more(Y/N)')
         while not is_yes(user_input) and not is_no(user_input):
