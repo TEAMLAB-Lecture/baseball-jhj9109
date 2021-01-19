@@ -299,17 +299,14 @@ def main():
             user_input = input('Input guess number : ')
             
             # 잘못된 입력
-            while_roop = 0
+
             while not is_digit(user_input) or not is_between_100_and_999(user_input) or not is_validated_number(user_input):
                 # 0입력하여 종료하는 경우
                 if user_input == "0":
                     break
                 print("Wrong Input, Input again")
                 user_input = input('Input guess number : ')
-                while_roop += 1
-                if while_roop == 10:
-                    print("무한루프")
-                    break
+
             # 0 입력하여 종료하는 경우
             if user_input == "0":
                 break
