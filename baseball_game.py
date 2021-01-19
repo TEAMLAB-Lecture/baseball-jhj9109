@@ -102,6 +102,7 @@ def is_duplicated_number(three_digit):
             aleady_exist[number] = 1
     # ==================================
     return result
+    
 def is_validated_number(user_input_number):
     # '''
     # Input:
@@ -326,6 +327,7 @@ def main():
         # 게임 종료 후 => 다음 게임 여쭤보는 단계
         user_input = input('You win, one more(Y/N)')
         while not is_yes(user_input) and not is_no(user_input):
+            print("Wrong Input, Input again")
             user_input = input('You win, one more(Y/N)')
         # Y/N 입력 완료
         if is_yes(user_input):
