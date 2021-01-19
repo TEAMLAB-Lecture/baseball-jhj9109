@@ -91,20 +91,17 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    result = None
+    result = False
     aleady_exist = [0] * 10
     for char in three_digit:
         number = int(char)
         if aleady_exist[number]:
-            result = False
+            result = True
             break
         else:
             aleady_exist[number] = 1
-    else:
-        result = True
     # ==================================
     return result
-
 def is_validated_number(user_input_number):
     # '''
     # Input:
@@ -128,7 +125,7 @@ def is_validated_number(user_input_number):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
     result = None
-    if is_digit(user_input_number) and is_between_100_and_999(user_input_number) and is_duplicated_number(user_input_number):
+    if is_digit(user_input_number) and is_between_100_and_999(user_input_number) and not is_duplicated_number(user_input_number):
         result = True
     else:
         result = False
@@ -159,7 +156,7 @@ def get_not_duplicated_three_digit_number():
     result = None
     while True:
         number = get_random_number()
-        if is_duplicated_number(str(number)):
+        if not is_duplicated_number(str(number)):
             break
     result = number
     # ==================================
